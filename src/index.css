@@ -1,0 +1,339 @@
+:root {
+  /* Medical Theme Colors */
+  --color-primary: #0284c7;
+  /* Sky 600 - Trustworthy Blue */
+  --color-primary-hover: #0369a1;
+  --color-primary-light: #e0f2fe;
+
+  --color-secondary: #0d9488;
+  /* Teal 600 - Healing Green */
+  --color-secondary-light: #ccfbf1;
+
+  --color-danger: #ef4444;
+  --color-success: #22c55e;
+
+  --color-background: #f8fafc;
+  /* Slate 50 */
+  --color-surface: #ffffff;
+  --color-border: #e2e8f0;
+  /* Slate 200 */
+
+  --color-text-main: #0f172a;
+  /* Slate 900 */
+  --color-text-muted: #64748b;
+  /* Slate 500 */
+  --color-text-inverted: #ffffff;
+
+  /* Spacing & Layout */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+  gap: var(--spacing-xs);
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverted);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.btn-secondary {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+  color: var(--color-text-main);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-background);
+  border-color: var(--color-primary);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--color-text-muted);
+}
+
+.btn-ghost:hover {
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+}
+
+.btn-danger {
+  background-color: #fee2e2;
+  /* Red 100 */
+  color: #991b1b;
+  /* Red 800 */
+}
+
+.btn-danger:hover {
+  background-color: #fecaca;
+}
+
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-lg);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.625rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-xs);
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Print Preview Wrapper */
+.print-preview-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: #525659;
+  /* Browser PDF viewer bg color */
+  padding: 2rem;
+  margin: -2rem calc(-1 * var(--spacing-md));
+  /* Break out of container */
+  min-height: calc(100vh - 80px);
+}
+
+.page-a4 {
+  width: 210mm;
+  min-height: 297mm;
+  background: white;
+  margin: auto;
+  padding: 10mm 10mm 10mm 75mm;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.page-a4 .header-space {
+  height: 70mm;
+  /* Optional: visual cue for letterhead space in preview */
+  border-bottom: 1px dashed #eee;
+  margin-bottom: 0;
+}
+
+/* Override Canvas Styles in Print Preview */
+.page-a4 .canvas-layout {
+  gap: 1rem !important;
+  display: block !important;
+  /* Stack vertically */
+}
+
+.page-a4 .section-drop-zone {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  min-height: auto !important;
+}
+
+.page-a4 .section-title {
+  font-size: 1.1em !important;
+  border-bottom: 1px solid #000 !important;
+  color: #000 !important;
+  padding-bottom: 2px !important;
+  margin-bottom: 0.5rem !important;
+  margin-top: 1.5rem;
+}
+
+.medicine-item-print {
+  padding: 0.25rem 0;
+  border-bottom: 1px dotted #eee;
+}
+
+.medicine-item-print:last-child {
+  border-bottom: none;
+}
+
+/* Real Print Media Query */
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  .no-print,
+  header,
+  .medicine-search-container,
+  .btn,
+  .card>p {
+    display: none !important;
+  }
+
+  html,
+  body {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .app-container,
+  main {
+    background-color: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+  }
+
+  .print-preview-wrapper {
+    padding: 0 !important;
+    background: white !important;
+    margin: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .page-a4 {
+    box-shadow: none !important;
+    margin: 0 !important;
+    /* Top: 10mm, Right: 10mm, Bottom: 10mm, Left: 75mm (to clear sidebar) */
+    padding: 10mm 10mm 10mm 75mm !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  /* Increase header space to clear top details */
+  .header-space {
+    height: 70mm !important;
+    border: none !important;
+  }
+
+  .card {
+    box-shadow: none;
+    border: none;
+    padding: 0;
+  }
+
+  .canvas-layout {
+    display: block !important;
+  }
+
+  .section-drop-zone {
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    min-height: auto !important;
+  }
+}
